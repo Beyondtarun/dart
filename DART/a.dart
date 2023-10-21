@@ -52,7 +52,8 @@ main() {
 // }
 
 // main() {
-//   //int a = 10;
+//   //int a = 20
+;
 //   //a = "xyz";
 //   var a; //automatically assigned null
 //   print(a.runtimeType);
