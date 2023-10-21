@@ -1,177 +1,233 @@
-// // // //q1. find factor
+// // // // //q1. find factor
 
+// // // // import 'dart:io';
+
+// // // // main() {
+// // // //   stdout.write("ENTER NUMBER: ");
+// // // //   int a = int.parse(stdin.readLineSync()!);
+// // // //   List<int> Factors = [];
+// // // //   for (int i = 1; i <= a; i++) {
+// // // //     if (a % i == 0) {
+// // // //       Factors.add(i);
+// // // //     }
+// // // //   }
+// // // //   print("factors are: $Factors");
+// // // // }
+
+// // // //q2.
+// // // import 'dart:io';
+
+// // // void main() {
+// // //   stdout.write("Enter a number: ");
+
+// // //   int number = int.parse(stdin.readLineSync()!);
+// // //   List<int> primeFactors = [];
+// // //   print("Prime factors of $number are: ");
+// // //   for (int i = 2; i <= number; i++) {
+// // //     while (number % i == 0) {
+// // //       primeFactors.add(i);
+// // //       number = number ~/ i;
+// // //     }
+// // //   }
+// // //   print("prime factors are: $primeFactors");
+// // // }
+
+// // // //Q3.
 // // // import 'dart:io';
 
 // // // main() {
 // // //   stdout.write("ENTER NUMBER: ");
-// // //   int a = int.parse(stdin.readLineSync()!);
-// // //   List<int> Factors = [];
-// // //   for (int i = 1; i <= a; i++) {
-// // //     if (a % i == 0) {
-// // //       Factors.add(i);
+// // //   int num = int.parse(stdin.readLineSync()!);
+
+// // //   int count = 0;
+// // //   for (int i = 1; i <= num; i++) {
+// // //     if (num % i == 0) {
+// // //       count++;
 // // //     }
 // // //   }
-// // //   print("factors are: $Factors");
+// // //   stdout.write("factor of $num is $count");
 // // // }
-
-// // //q2.
 // // import 'dart:io';
 
 // // void main() {
-// //   stdout.write("Enter a number: ");
+// //   print("Enter a list of numbers separated by spaces:");
+// //   String input = stdin.readLineSync() ?? '';
 
-// //   int number = int.parse(stdin.readLineSync()!);
-// //   List<int> primeFactors = [];
-// //   print("Prime factors of $number are: ");
-// //   for (int i = 2; i <= number; i++) {
-// //     while (number % i == 0) {
-// //       primeFactors.add(i);
-// //       number = number ~/ i;
-// //     }
-// //   }
-// //   print("prime factors are: $primeFactors");
+// //   List<int> numbers = input
+// //       .split(' ')
+// //       .map((str) => int.tryParse(str) ?? 0) // Parse input to integers
+// //       .toList();
+
+// //   List<int> reversedNumbers = reverseDigitsInList(numbers);
+
+// //   print("Reversed List: $reversedNumbers");
 // // }
 
-// // //Q3.
-// // import 'dart:io';
+// // List<int> reverseDigitsInList(List<int> list) {
+// //   List<int> reversedList = [];
 
-// // main() {
-// //   stdout.write("ENTER NUMBER: ");
-// //   int num = int.parse(stdin.readLineSync()!);
+// //   for (int number in list) {
+// //     int reversedNumber = reverseDigits(number);
+// //     reversedList.add(reversedNumber);
+// //   }
 
-// //   int count = 0;
-// //   for (int i = 1; i <= num; i++) {
-// //     if (num % i == 0) {
-// //       count++;
+// //   return reversedList;
+// // }
+
+// // int reverseDigits(int number) {
+// //   int reversed = 0;
+
+// //   while (number != 0) {
+// //     int digit = number % 10;
+// //     reversed = reversed * 10 + digit;
+// //     number ~/= 10;
+// //   }
+
+// //   return reversed;
+// // // }
+// // bool checkNumberInPairs(List<int> numbers, int target) {
+// //   for (int i = 0; i < numbers.length - 1; i++) {
+// //     if (numbers[i] != target && numbers[i + 1] != target) {
+// //       return false;
 // //     }
 // //   }
-// //   stdout.write("factor of $num is $count");
+// //   return true;
 // // }
+
+// // void main() {
+// //   List<int> numbers = [1, 2, 2, 3, 3, 2, 2, 1];
+// //   int target = 2;
+
+// //   bool result = checkNumberInPairs(numbers, target);
+
+// //   if (result) {
+// //     print("$target appears in every pair of adjacent integers.");
+// //   } else {
+// //     print("$target does not appear in every pair of adjacent integers.");
+// //   }
+// // }
+
+// //
+// class Mobile {
+//   String brand;
+//   String color;
+//   int camera;
+
+//   Mobile(this.brand, this.color, this.camera);
+
+//   void printDetails() {
+//     print('Mobile Details:');
+//     print('Brand: $brand');
+//     print('Color: $color');
+//     print('Camera: $camera MP');
+//     print('--------------------------');
+//   }
+// }
+
+// void main() {
+//   // Creating three Mobile objects with initialized values
+//   Mobile mobile1 = Mobile('Samsung', 'Black', 12);
+//   Mobile mobile2 = Mobile('Apple', 'Silver', 16);
+//   Mobile mobile3 = Mobile('Google', 'White', 20);
+
+//   // Printing details of each mobile object
+//   mobile1.printDetails();
+//   mobile2.printDetails();
+//   mobile3.printDetails();
+// }
+//
+
 // import 'dart:io';
 
 // void main() {
-//   print("Enter a list of numbers separated by spaces:");
-//   String input = stdin.readLineSync() ?? '';
+//   print("Enter a number:");
+//   var input = int.parse(stdin.readLineSync()!);
 
-//   List<int> numbers = input
-//       .split(' ')
-//       .map((str) => int.tryParse(str) ?? 0) // Parse input to integers
-//       .toList();
-
-//   List<int> reversedNumbers = reverseDigitsInList(numbers);
-
-//   print("Reversed List: $reversedNumbers");
+//   var words = convertToWords(input);
+//   print("Output: $words");
 // }
 
-// List<int> reverseDigitsInList(List<int> list) {
-//   List<int> reversedList = [];
+// String convertToWords(int number) {
+//   var units = [
+//     "",
+//     "One",
+//     "Two",
+//     "Three",
+//     "Four",
+//     "Five",
+//     "Six",
+//     "Seven",
+//     "Eight",
+//     "Nine"
+//   ];
 
-//   for (int number in list) {
-//     int reversedNumber = reverseDigits(number);
-//     reversedList.add(reversedNumber);
-//   }
+//   var teens = [
+//     "Ten",
+//     "Eleven",
+//     "Twelve",
+//     "Thirteen",
+//     "Fourteen",
+//     "Fifteen",
+//     "Sixteen",
+//     "Seventeen",
+//     "Eighteen",
+//     "Nineteen"
+//   ];
 
-//   return reversedList;
-// }
+//   var tens = [
+//     "",
+//     "",
+//     "Twenty",
+//     "Thirty",
+//     "Forty",
+//     "Fifty",
+//     "Sixty",
+//     "Seventy",
+//     "Eighty",
+//     "Ninety"
+//   ];
 
-// int reverseDigits(int number) {
-//   int reversed = 0;
+//   var numToString = number.toString();
+//   var length = numToString.length;
 
-//   while (number != 0) {
-//     int digit = number % 10;
-//     reversed = reversed * 10 + digit;
-//     number ~/= 10;
-//   }
-
-//   return reversed;
-// // }
-// bool checkNumberInPairs(List<int> numbers, int target) {
-//   for (int i = 0; i < numbers.length - 1; i++) {
-//     if (numbers[i] != target && numbers[i + 1] != target) {
-//       return false;
+//   if (length == 1) {
+//     return units[number];
+//   } else if (length == 2) {
+//     if (number < 20) {
+//       return teens[number - 10];
+//     } else {
+//       return tens[number ~/ 10] +
+//           (number % 10 != 0 ? " " + units[number % 10] : "");
 //     }
-//   }
-//   return true;
-// }
-
-// void main() {
-//   List<int> numbers = [1, 2, 2, 3, 3, 2, 2, 1];
-//   int target = 2;
-
-//   bool result = checkNumberInPairs(numbers, target);
-
-//   if (result) {
-//     print("$target appears in every pair of adjacent integers.");
+//   } else if (length == 3) {
+//     return units[number ~/ 100] +
+//         " Hundred" +
+//         (number % 100 != 0 ? " " + convertToWords(number % 100) : "");
 //   } else {
-//     print("$target does not appear in every pair of adjacent integers.");
+//     return "Number out of range";
 //   }
 // }
-
 import 'dart:io';
 
 void main() {
-  List<int> array1 = [];
-  List<int> array2 = [];
+  print("Enter a decimal number:");
+  var decimalNumber = int.parse(stdin.readLineSync()!);
 
-  // Input for the first list
-  print("Enter the elements for the first list (separated by spaces):");
-  String input1 = stdin.readLineSync() ?? '';
-  array1 = input1.split(' ').map((str) => int.tryParse(str) ?? 0).toList();
-
-  // Input for the second list
-  print("Enter the elements for the second list (separated by spaces):");
-  String input2 = stdin.readLineSync() ?? '';
-  array2 = input2.split(' ').map((str) => int.tryParse(str) ?? 0).toList();
-
-  // Manually sort both arrays
-  array1 = manualSort(array1);
-  array2 = manualSort(array2);
-
-  // Merge the sorted arrays
-  List<int> result = mergeSortedArrays(array1, array2);
-
-  print("Merged and Sorted Result: $result");
+  var binaryEquivalent = convertToBinary(decimalNumber);
+  print("Binary Equivalent: $binaryEquivalent");
 }
 
-List<int> manualSort(List<int> list) {
-  for (int i = 0; i < list.length - 1; i++) {
-    for (int j = i + 1; j < list.length; j++) {
-      if (list[i] > list[j]) {
-        int temp = list[i];
-        list[i] = list[j];
-        list[j] = temp;
-      }
-    }
-  }
-  return list;
-}
-
-List<int> mergeSortedArrays(List<int> array1, List<int> array2) {
-  List<int> result = [];
-
-  int i = 0;
-  int j = 0;
-
-  while (i < array1.length && j < array2.length) {
-    if (array1[i] < array2[j]) {
-      result.add(array1[i]);
-      i++;
-    } else {
-      result.add(array2[j]);
-      j++;
-    }
+String convertToBinary(int number) {
+  if (number == 0) {
+    return '0';
   }
 
-  // Add any remaining elements from both arrays
-  while (i < array1.length) {
-    result.add(array1[i]);
-    i++;
+  String binary = '';
+  while (number > 0) {
+    var remainder = number % 2;
+    binary = '$remainder$binary';
+    number ~/= 2;
   }
 
-  while (j < array2.length) {
-    result.add(array2[j]);
-    j++;
-  }
-
-  return result;
+  return binary;
 }
