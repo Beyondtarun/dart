@@ -7,7 +7,7 @@
 //   print("the sum is: ${c}");
 //   int d = 20;
 //   var e;
-//   print("the value of d is: ${d}");
+//   print("the value of d is: ${d}"
 //   print("${e}");
 //   print(d);
 //   print(e);
